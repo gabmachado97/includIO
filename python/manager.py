@@ -2,8 +2,8 @@
 
 import os
 
-path_test = r'C:\Users\machadog\Desktop\WEG\PYTHON PROJECTS\remover_dats\dados'
-path_remove = 'at01'
+# path_test = r'C:\Users\machadog\Desktop\WEG\PYTHON PROJECTS\remover_dats\dados'
+# path_remove = 'at01'
 
 def removeInclude(rootPath, uFolderName):
     '''
@@ -77,76 +77,7 @@ def addInclude(rootPath, uFolderName):
                 
 
 
-try:
-    removeInclude(path_test, path_remove)
-except ValueError as e:
-    print(e)
-
-
-def UpdateInclude(pathFolder, folderToUpdate, addInclude):
-
-    if os.path.isdir(pathFolder + folderToUpdate):
-        # if youre gonna add, its gonna verify the destiny's folder to seek all the existing .dat
-        listFiles = [f for f in os.listdir(pathFolder + folderToUpdate) if f.endswith('.dat')]
-        print(listFiles)
-
-    for fileName in os.listdir(pathFolder):
-        foundInclude = False
-        if fileName.endswith('.dat'):
-            #loop every line
-            datFile = open(os.path.join(pathFolder,fileName),"r")
-            replaced_content = ""
-            for line in datFile:
-                line = line.strip()
-                if ("#include" in line) and (folderToUpdate in line):
-
-                    if addInclude:
-                        foundInclude = True
-                        new_line = line.replace(";", "")
-                        print ("Include adicionado: " + folderToUpdate + " em " + fileName)
-                    else:
-                        foundInclude = True
-                        new_line = ";" + line
-                        print("Include removido: " + folderToUpdate + " em " + fileName)
-                else:
-                    new_line = line
-
-                replaced_content = replaced_content + new_line + "\n"
-
-            if addInclude:
-                # Há o arquivo na pasta de destino, mas não há o include na raiz, entao adiciona
-                if any(dat in fileName for dat in listFiles) and (foundInclude == False):
-                    print("Include de: " + folderToUpdate + " não encontrado em " + fileName)
-                    replaced_content = "#include " + folderToUpdate + fileName + "\n" + replaced_content
-                    print("Include de: " + folderToUpdate + " adicionado em " + fileName)
-            else:
-                # Não há o arquivo na pasta de destino, mas há o include na raiz, entao deleta include
-                if not (any(dat in fileName for dat in listFiles)) and (foundInclude == True):
-                    print("Include de: " + folderToUpdate + " encontrado em " + fileName)
-                    #replaced_content = "#include " + folderToUpdate + fileName + "\n" + replaced_content
-                    test = replaced_content.split("\n")
-                    replaced_content = [x for x in test if (folderToUpdate + fileName) not in x]
-                    replaced_content = '\n'.join(replaced_content)
-                    print("Include de: " + folderToUpdate + " removido em " + fileName)
-            datFile.close()
-
-            writeFile = open(os.path.join(pathFolder, fileName), "w")
-            writeFile.write(replaced_content)
-            writeFile.close()
-
-
-
-
-
-
-
-# if __name__ == '__main__':
-#     pathFolder = './dados/'
-#     folderToEdit = "2Ktest/"
-
-
-
-#     # Pass False to remove include and True to add include
-#     # Folder that are the dats, folder we want include
-#     UpdateInclude(pathFolder, folderToEdit, True)
-
+# try:
+#     removeInclude(path_test, path_remove)
+# except ValueError as e:
+#     print(e)

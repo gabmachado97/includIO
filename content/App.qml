@@ -29,6 +29,8 @@ ApplicationWindow {
         border.width: 1
         anchors.fill: parent
 
+
+
         Rectangle {
             id: topBar
             height: 35
@@ -56,15 +58,15 @@ ApplicationWindow {
                 anchors.leftMargin: 0
                 anchors.topMargin: 0
 
-                MouseArea{
-                    anchors{
-                        left: parent.left
-                        right: parent.right
-                        top: parent.top
-                        bottom: parent.bottom
-                    }
-                    onClicked: internal.maximizeRestore()
-                }
+                //                MouseArea{
+                //                    anchors{
+                //                        left: parent.left
+                //                        right: parent.right
+                //                        top: parent.top
+                //                        bottom: parent.bottom
+                //                    }
+                //                    onClicked: internal.maximizeRestore()
+                //                }
 
                 Image {
                     id: iconApp
@@ -109,11 +111,11 @@ ApplicationWindow {
 
                     }
 
-                    TopBarBtn {
-                        id: btnMaximizeRestore
-                        btnIconSource: "./images/svg_icons/maximize.svg"
-                        onClicked: internal.maximizeRestore()
-                    }
+//                    TopBarBtn {
+//                        id: btnMaximizeRestore
+//                        btnIconSource: "./images/svg_icons/maximize.svg"
+//                        onClicked: internal.maximizeRestore()
+//                    }
 
                     TopBarBtn {
                         id: btnClose
@@ -124,7 +126,6 @@ ApplicationWindow {
                 }
             }
         }
-
         Rectangle {
             id: titleBg
             width: 100
@@ -134,6 +135,7 @@ ApplicationWindow {
                 left: parent.left
                 top: topBar.bottom
             }
+
             Text{
                 id: title1
                 text: 'includ.'
@@ -376,7 +378,7 @@ ApplicationWindow {
                 }
                 TopBarBtn {
                     btnIconSource: "./images/svg_icons/mail.svg"
-                    onClicked: internal.maximizeRestore()
+                    onClicked: contactPage.show()
                 }
                 Text{
                     color: 'white'
@@ -393,7 +395,7 @@ ApplicationWindow {
                 btnIconSource: "./images/svg_icons/star.svg"
                 font.bold: true
                 font.pointSize: 10
-                onClicked: { console.log('oi') }
+                onClicked: { donatePage.show() }
             }
         }
     }
@@ -408,6 +410,8 @@ ApplicationWindow {
     }
 
     InfoPage{id: infoPage}
+    ContactPage{id: contactPage}
+    DonatePage{id: donatePage}
 
     //    Popup {
     //            id: popupInfo

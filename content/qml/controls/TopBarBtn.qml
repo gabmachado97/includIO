@@ -1,6 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-
+import Qt5Compat.GraphicalEffects
 
 Button{
     id: btnTopBar
@@ -11,7 +11,9 @@ Button{
     property color btnColorMouseOver:"#23272E"
     property color btnColorClicked:"#00a1f1"
     property color btnColorBorder:"transparent"
+    property color iconColor:"white"
     property int radiusValue: 0
+
 
     QtObject{
         id: internal
@@ -50,6 +52,15 @@ Button{
 
         }
 
+        ColorOverlay{
+            source: iconBtn
+            color: iconColor
+            anchors.fill: iconBtn
+            antialiasing: false
+            width: iconBtn.width
+            height: iconBtn.height
+        }
+
 
         //            ColorOverlay{
         //                anchors.fill: iconBtn
@@ -62,6 +73,6 @@ Button{
 }
 /*##^##
 Designer {
-    D{i:0;height:35;width:35}D{i:1}
+    D{i:0;height:35;width:35}
 }
 ##^##*/

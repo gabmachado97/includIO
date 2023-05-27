@@ -13,6 +13,7 @@ Button{
     property color btnColorDefault: "#AA00FF"
     property color btnColorMouseOver:"#8a02cf"
     property color btnColorClicked:"#be02cf"
+    property color iconColor:"white"
     property int iconWidth: 18
     property int iconHeight: 18
 
@@ -52,6 +53,8 @@ Button{
             antialiasing: false
 
         }
+
+
 
         Text{
             color: "#ffffff"
