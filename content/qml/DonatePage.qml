@@ -1,15 +1,13 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import "./controls"
-
+import QtQuick.Controls.Universal 2.12
 
 ApplicationWindow {
     id: infoWindow
     visible: false
     width: 250
     height: 350
-    Universal.theme: Universal.Dark
-    Universal.accent: Universal.Violet
 
     //REMOVE TITLE BAR
     flags: Qt.Window | Qt.FramelessWindowHint
@@ -65,7 +63,7 @@ ApplicationWindow {
                 id: btnClose
                 anchors.right: parent.right
                 btnColorClicked: "#ff007f"
-                btnIconSource: "../images/svg_icons/close.svg"
+                btnIconSource: "../../images/svg_icons/close.svg"
                 onClicked: infoWindow.close()
             }
 

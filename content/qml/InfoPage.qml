@@ -1,15 +1,14 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import "./controls"
+import QtQuick.Controls.Universal 2.12
 
 
 ApplicationWindow {
     id: infoWindow
     visible: false
     width: 320
-    height: 300
-    Universal.theme: Universal.Dark
-    Universal.accent: Universal.Violet
+    height: 310
 
     //REMOVE TITLE BAR
     flags: Qt.Window | Qt.FramelessWindowHint
@@ -63,7 +62,7 @@ ApplicationWindow {
                 id: btnClose
                 anchors.right: parent.right
                 btnColorClicked: "#ff007f"
-                btnIconSource: "../images/svg_icons/close.svg"
+                btnIconSource: "../../images/svg_icons/close.svg"
                 onClicked: infoWindow.close()
             }
 
@@ -141,6 +140,13 @@ ApplicationWindow {
             Text{
                 color: 'white'
                 text: "3. seja feliz!"
+                height: 15
+                font.pointSize: 8
+            }
+
+            Text{
+                color: 'white'
+                text: "obs.: o app não apaga a pasta, apenas remove \n o #include"
                 height: 15
                 font.pointSize: 8
             }

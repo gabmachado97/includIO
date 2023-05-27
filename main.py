@@ -18,15 +18,30 @@ class Bridge(QObject):
     # def refresh(self):
     #     self.dbModels = DashboardModel(self.data)
 
-    # receivedIED     = Signal(str)
-    # linkVGeralModel = Signal(list)
-    # linkDBModel     = Signal(list)
-    # linkDSetModel     = Signal(list)
-    # linkInOutDraw     = Signal(list)
 
-    # @Slot(str)
-    # def setTitle(self, iedName):
-    #     self.receivedIED.emit(iedName)
+    output = Signal(str)
+
+    @Slot(str, str)
+    def add(self, rootPath, uFolder):
+        if rootPath.startswith('file:///'):
+            rootPath = rootPath.replace('file:///','')
+        try:
+            addInclude(rootPath, uFolder)
+            self.output.emit("🤙 #include adicionado com sucesso!")
+        except ValueError as e:
+            self.output.emit("👎 " + str(e))
+
+    @Slot(str, str)
+    def remove(self, rootPath, uFolder):
+        if rootPath.startswith('file:///'):
+            rootPath = rootPath.replace('file:///','')
+        try:
+            removeInclude(rootPath, uFolder)
+            self.output.emit("🤙 #include removido com sucesso!")
+        except ValueError as e:
+            self.output.emit("👎 " + str(e))
+
+        #self.receivedIED.emit(iedName)
 
     # @Slot(str)
     # def setModel(self, iedName):
@@ -70,7 +85,7 @@ if __name__ == '__main__':
     
 
     # engine.load(QUrl.fromLocalFile('main.qml'))
-    engine.load(os.path.join(os.path.dirname(__file__), "./GUI/content/App.qml"))
+    engine.load(os.path.join(os.path.dirname(__file__), "content/App.qml"))
 
     # Add the directory containing the custom components to the QML import path
     if not engine.rootObjects():

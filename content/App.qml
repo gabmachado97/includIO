@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0
 
 import QtQuick 6.4
-import GUI
 import QtQuick.Dialogs
 import "qml/controls"
 import "qml"
@@ -98,7 +97,7 @@ ApplicationWindow {
                     id: rowBtns
                     x: 1690
                     y: 0
-                    width: 105
+                    width: 70
                     height: 35
                     anchors.right: parent.right
                     anchors.top: parent.top
@@ -111,16 +110,16 @@ ApplicationWindow {
 
                     }
 
-//                    TopBarBtn {
-//                        id: btnMaximizeRestore
-//                        btnIconSource: "./images/svg_icons/maximize.svg"
-//                        onClicked: internal.maximizeRestore()
-//                    }
+                    //                    TopBarBtn {
+                    //                        id: btnMaximizeRestore
+                    //                        btnIconSource: "./images/svg_icons/maximize.svg"
+                    //                        onClicked: internal.maximizeRestore()
+                    //                    }
 
                     TopBarBtn {
                         id: btnClose
                         btnColorClicked: "#ff007f"
-                        btnIconSource: "./images/svg_icons/close.svg"
+                        btnIconSource: "../../images/svg_icons/close.svg"
                         onClicked: mainWindow.close()
                     }
                 }
@@ -296,7 +295,7 @@ ApplicationWindow {
                             width: 30
                             radiusValue: 5
                             btnColorBorder: '#383a42'
-                            btnIconSource: "./images/svg_icons/file.svg"
+                            btnIconSource: "../../images/svg_icons/file.svg"
                             onClicked: folderDialog.open()
                         }
                     }
@@ -355,8 +354,34 @@ ApplicationWindow {
                     anchors{
                         horizontalCenter: parent.horizontalCenter
                     }
-
+                    onClicked:
+                    {
+                        if (add.checked){
+                            qBridge.add(rootPath.text, folderName.text)
+                        }else{
+                            qBridge.remove(rootPath.text, folderName.text)
+                        }
+                    }
                 }
+
+                Rectangle{
+                    width: parent.width
+                    height: 30
+                    color: 'transparent'
+                    Text{
+                        id: feedback
+                        color: "white"
+                        anchors.fill: parent
+                        text: ""
+                        //font.bold: true
+                        font.pointSize: 10
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                    }
+                }
+
+
+                //Column fim
             }
         }
 
@@ -373,11 +398,11 @@ ApplicationWindow {
 
             Row{
                 TopBarBtn {
-                    btnIconSource: "./images/svg_icons/info.svg"
+                    btnIconSource: "../../images/svg_icons/info.svg"
                     onClicked: infoPage.show()
                 }
                 TopBarBtn {
-                    btnIconSource: "./images/svg_icons/mail.svg"
+                    btnIconSource: "../..//images/svg_icons/mail.svg"
                     onClicked: contactPage.show()
                 }
                 Text{
@@ -392,7 +417,7 @@ ApplicationWindow {
             DescBtn{
                 anchors.right: parent.right
                 text: "doar"
-                btnIconSource: "./images/svg_icons/star.svg"
+                btnIconSource: "../../images/svg_icons/star.svg"
                 font.bold: true
                 font.pointSize: 10
                 onClicked: { donatePage.show() }
@@ -409,23 +434,15 @@ ApplicationWindow {
         }
     }
 
-    InfoPage{id: infoPage}
-    ContactPage{id: contactPage}
-    DonatePage{id: donatePage}
+    InfoPage{id: infoPage; x: mainWindow.x + 50; y: mainWindow.y + 70}
+    ContactPage{id: contactPage; x: mainWindow.x + 50; y: mainWindow.y + 70}
+    DonatePage{id: donatePage; x: mainWindow.x + 70; y: mainWindow.y + 70}
 
-    //    Popup {
-    //            id: popupInfo
-    //            width: 200
-    //            height: 300
-    //            x: 30
-    //            y: 50
-    //            modal: false
-    //            focus: true
-    //            background: null
-    //            //closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
-    //            contentItem: InfoPage{
-    //                anchors.fill: parent;
-    //                onClosePopup: popupInfo.close()
-    //            }
-    //    }
+    Connections{
+        target: qBridge
+
+        function onOutput(textLabel){
+            feedback.text = textLabel
+        }
+    }
 }

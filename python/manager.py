@@ -43,9 +43,9 @@ def addInclude(rootPath, uFolderName):
     '''
     includePath = rootPath + '/' + uFolderName
     if not os.path.isdir(rootPath):
-        raise ValueError("Caminho para pasta raíz não encontrado!")
+        raise ValueError("caminho para pasta raíz não encontrado!")
     elif not os.path.isdir(includePath):
-        raise ValueError("Pasta de include não encontrada na pasta raíz!")
+        raise ValueError("pasta de include não encontrada na raíz!")
     else:
         includeFiles = [f for f in os.listdir(includePath) if f.endswith('.dat')]
         print(includeFiles)
