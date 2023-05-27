@@ -20,6 +20,8 @@ ApplicationWindow {
     //REMOVE TITLE BAR
     flags: Qt.Window | Qt.FramelessWindowHint
 
+    property int origin : 0
+    property int end: 100
 
     Rectangle {
         id: background
@@ -274,7 +276,7 @@ ApplicationWindow {
                         TextField{
                             id: rootPath
                             anchors.fill: parent
-                            text: "busque/insira a pasta raíz da base"
+                            placeholderText: "busque/insira a pasta raíz da base"
                             horizontalAlignment: Text.AlignLeft
                             verticalAlignment: Text.AlignVCenter
                             font.pointSize: 10
@@ -332,7 +334,7 @@ ApplicationWindow {
                         TextField{
                             id: folderName
                             anchors.fill: parent
-                            text: "insira o nome da pasta de include"
+                            placeholderText : "insira o nome da pasta de include"
                             horizontalAlignment: Text.AlignLeft
                             verticalAlignment: Text.AlignVCenter
                             font.pointSize: 10
@@ -362,6 +364,7 @@ ApplicationWindow {
                             qBridge.remove(rootPath.text, folderName.text)
                         }
                     }
+
                 }
 
                 Rectangle{
@@ -377,6 +380,33 @@ ApplicationWindow {
                         font.pointSize: 10
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
+                    }
+                }
+
+                Rectangle{
+                    width: 330
+                    height: 130
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    color: 'transparent'
+                    ScrollView {
+                        anchors.fill: parent
+                        TextArea {
+                            id: logViewer
+                            anchors.fill: parent
+                            readOnly: true
+                            text: "logViewer"
+                            horizontalAlignment: Text.AlignLeft
+                            //verticalAlignment: Text.AlignVCenter
+                            font.pointSize: 9
+                            color: 'white'
+                            background: Rectangle{
+                                width: parent.width
+                                radius: 5
+                                border.width: 1
+                                border.color: '#383a42'
+                                color: "#18191d"
+                            }
+                        }
                     }
                 }
 
@@ -415,6 +445,7 @@ ApplicationWindow {
             }
 
             DescBtn{
+                id: donateBtn
                 anchors.right: parent.right
                 text: "doar"
                 btnIconSource: "../../images/svg_icons/star.svg"
@@ -423,6 +454,21 @@ ApplicationWindow {
                 onClicked: { donatePage.show() }
             }
         }
+
+
+
+//        AnimatedArrow {
+//            origin: titleBg
+//            end: botBar
+//            duration: 2000
+//            color: "green"
+
+//            Component.onCompleted: {
+//                start();
+//            }
+//        }
+
+        //fim background
     }
 
 
@@ -443,6 +489,10 @@ ApplicationWindow {
 
         function onOutput(textLabel){
             feedback.text = textLabel
+        }
+
+        function onLog(textLabel){
+            logViewer.text = textLabel
         }
     }
 }
