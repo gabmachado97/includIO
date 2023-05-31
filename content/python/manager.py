@@ -28,7 +28,7 @@ def removeInclude(rootPath, uFolderName):
                 newContent = ""
                 for line in datFile:
                     line = line.strip()
-                    if not '/'+uFolderName+'/' in line:
+                    if (not '/'+uFolderName+'/' in line) and (not ' '+uFolderName+'/' in line):
                         #Add to the new content only if it does not contains the folder we want to remove from #include
                         newContent = newContent + line + "\n"
                     else:
@@ -72,7 +72,7 @@ def addInclude(rootPath, uFolderName):
                 alreadyInInclude = False
                 for line in datFile:
                     line = line.strip()
-                    if (('/'+uFolderName+'/' in line) and (not line.startswith(';'))):
+                    if ((('/'+uFolderName+'/' in line)or(' '+uFolderName+'/' in line)) and (not line.startswith(';'))):
                         #If it has uFolderName and is not a comment, then the include is already included and do nothing
                         alreadyInInclude = True
                     else:

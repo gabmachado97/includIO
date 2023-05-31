@@ -1,12 +1,13 @@
-// Copyright (C) 2021 The Qt Company Ltd.
-// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0
 
 import QtQuick 6.4
-import QtQuick.Dialogs
-import "qml/controls"
-import "qml"
+import "qrc:/resources/"
+//import "qrc:/resources/DonatePage.qml"
+//import "qrc:/resources/TopBarBtn.qml"
+//import "qrc:/resources/InfoPage.qml"
+//import "qrc:/resources/DescBtn.qml"
 import QtQuick.Controls 2.12
 import QtQuick.Controls.Universal 2.12
+import QtQuick.Dialogs
 
 ApplicationWindow {
     id: mainWindow
@@ -75,7 +76,7 @@ ApplicationWindow {
                     anchors.left: parent.left
                     anchors.top: parent.top
                     anchors.bottom: parent.bottom
-                    source: "./images/includio_logo3.png"
+                    source: "qrc:/resources/logo3.png"
                     anchors.topMargin: 5
                     anchors.leftMargin: 5
                     anchors.bottomMargin: 5
@@ -112,16 +113,10 @@ ApplicationWindow {
 
                     }
 
-                    //                    TopBarBtn {
-                    //                        id: btnMaximizeRestore
-                    //                        btnIconSource: "./images/svg_icons/maximize.svg"
-                    //                        onClicked: internal.maximizeRestore()
-                    //                    }
-
                     TopBarBtn {
                         id: btnClose
                         btnColorClicked: "#ff007f"
-                        btnIconSource: "../../images/svg_icons/close.svg"
+                        btnIconSource: "qrc:/resources/close.svg" //"../../images/svg_icons/close.svg"
                         onClicked: mainWindow.close()
                     }
                 }
@@ -297,7 +292,7 @@ ApplicationWindow {
                             width: 30
                             radiusValue: 5
                             btnColorBorder: '#383a42'
-                            btnIconSource: "../../images/svg_icons/file.svg"
+                            btnIconSource: "qrc:/resources/file.svg"
                             onClicked: folderDialog.open()
                         }
                     }
@@ -428,11 +423,11 @@ ApplicationWindow {
 
             Row{
                 TopBarBtn {
-                    btnIconSource: "../../images/svg_icons/info.svg"
+                    btnIconSource: "qrc:/resources/info.svg"
                     onClicked: infoPage.show()
                 }
                 TopBarBtn {
-                    btnIconSource: "../..//images/svg_icons/mail.svg"
+                    btnIconSource: "qrc:/resources/mail.svg"
                     onClicked: contactPage.show()
                 }
                 Text{
@@ -448,7 +443,7 @@ ApplicationWindow {
                 id: donateBtn
                 anchors.right: parent.right
                 text: "doar"
-                btnIconSource: "../../images/svg_icons/star.svg"
+                btnIconSource: "qrc:/resources/star.svg"
                 font.bold: true
                 font.pointSize: 10
                 onClicked: { donatePage.show() }

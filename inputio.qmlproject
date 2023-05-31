@@ -4,6 +4,9 @@ Project {
     mainFile: "content/App.qml"
     mainUiFile: "content/Screen01.ui.qml"
 
+
+
+
     /* Include .qml, .js, and image files from current directory and subdirectories */
     QmlFiles {
         directory: "content"
@@ -32,6 +35,11 @@ Project {
     Files {
         filter: "*.conf"
         files: ["qtquickcontrols2.conf"]
+    }
+
+    Files {
+        filter: "*.qrc"
+        files: ["inputio.qrc"]
     }
 
     Files {

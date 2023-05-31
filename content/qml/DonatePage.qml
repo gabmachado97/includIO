@@ -1,6 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import "./controls"
+import "qrc:/resources/"
 import QtQuick.Controls.Universal 2.12
 
 ApplicationWindow {
@@ -38,7 +38,7 @@ ApplicationWindow {
                 anchors.left: parent.left
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
-                source: "../images/includio_logo3.png"
+                source: "qrc:/resources/logo3.png"
                 anchors.topMargin: 5
                 anchors.leftMargin: 5
                 anchors.bottomMargin: 5
@@ -63,7 +63,7 @@ ApplicationWindow {
                 id: btnClose
                 anchors.right: parent.right
                 btnColorClicked: "#ff007f"
-                btnIconSource: "../../images/svg_icons/close.svg"
+                btnIconSource: "qrc:/resources/close.svg"
                 onClicked: infoWindow.close()
             }
 
@@ -95,7 +95,7 @@ ApplicationWindow {
                 horizontalCenter: parent.horizontalCenter
                 verticalCenter: bgBottom.top
             }
-            source: "../images/qrcode.jpg"
+            source: "qrc:/resources/qrcode.png"
             fillMode: Image.PreserveAspectFit
             z: 1
         }

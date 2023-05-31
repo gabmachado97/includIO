@@ -1,12 +1,13 @@
-from PySide6.QtCore import *
+from PySide6.QtCore import Slot, Signal, QObject
 from PySide6.QtGui import QGuiApplication
 from PySide6.QtQml import QQmlApplicationEngine
 
 import sys
 import os
 
-from python.manager import * #import TreeViewOrganizer
+from content.python.manager import * #import TreeViewOrganizer
 
+import inputio_rc
 
 
 class Bridge(QObject):
@@ -54,8 +55,7 @@ if __name__ == '__main__':
     #Main Bridge
     context.setContextProperty("qBridge", pBridge)
 
-    # engine.load(QUrl.fromLocalFile('main.qml'))
-    engine.load(os.path.join(os.path.dirname(__file__), "content/App.qml"))
+    engine.load("qrc:/resources/mainQml.qml")
 
     # Add the directory containing the custom components to the QML import path
     if not engine.rootObjects():

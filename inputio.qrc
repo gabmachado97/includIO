@@ -1,0 +1,26 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="resources">
+<file alias="mainQml.qml">./content/App.qml</file>
+<file alias="logo3.ico">./content/images/includIO_logo3.ico</file>
+<file alias="logo3.png">./content/images/includIO_logo3.png</file>
+<file alias="qrcode.png">./content/images/qrcode.jpg</file>
+<file alias="chevron-down.svg">./content/images/svg_icons/chevron-down.svg</file>
+<file alias="close.svg">./content/images/svg_icons/close.svg</file>
+<file alias="file.svg">./content/images/svg_icons/file.svg</file>
+<file alias="info.svg">./content/images/svg_icons/info.svg</file>
+<file alias="mail.svg">./content/images/svg_icons/mail.svg</file>
+<file alias="star.svg">./content/images/svg_icons/star.svg</file>
+<file alias="ContactPage.qml">./content/qml/ContactPage.qml</file>
+<file alias="DescBtn.qml">./content/qml/controls/DescBtn.qml</file>
+<file alias="TopBarBtn.qml">./content/qml/controls/TopBarBtn.qml</file>
+<file alias="DonatePage.qml">./content/qml/DonatePage.qml</file>
+<file alias="InfoPage.qml">./content/qml/InfoPage.qml</file>
+<file>./imports/GUI/Constants.qml</file>
+<file>./imports/GUI/DirectoryFontLoader.qml</file>
+<file>./imports/GUI/EventListModel.qml</file>
+<file>./imports/GUI/EventListSimulator.qml</file>
+<file>./imports/GUI/qmldir</file>
+<file>./inputio.qmlproject</file>
+<file>./qtquickcontrols2.conf</file>
+</qresource>
+</RCC>

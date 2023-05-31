@@ -1,6 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import Qt5Compat.GraphicalEffects
+import "qrc:/resources/"
 
 Button{
     id: btnLeftMenu
@@ -9,7 +9,7 @@ Button{
     font.bold: false
 
     //CUSTOM PROPERTIES
-    property url btnIconSource: "./images/svg_icons/star.svg"
+    property url btnIconSource: "qrc:/resources/star.svg"
     property color btnColorDefault: "#AA00FF"
     property color btnColorMouseOver:"#8a02cf"
     property color btnColorClicked:"#be02cf"

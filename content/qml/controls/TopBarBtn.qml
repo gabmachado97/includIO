@@ -1,12 +1,13 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import Qt5Compat.GraphicalEffects
+import "qrc:/resources/"
 
 Button{
     id: btnTopBar
 
     //CUSTOM PROPERTIES
-    property url btnIconSource: "../../images/svg_icons/chevron-down.svg"
+    property url btnIconSource: "qrc:/resources/chevron-down.svg"
     property color btnColorDefault: "#1c1d20"
     property color btnColorMouseOver:"#23272E"
     property color btnColorClicked:"#00a1f1"
