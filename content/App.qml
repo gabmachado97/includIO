@@ -189,6 +189,17 @@ ApplicationWindow {
 
         }
 
+        Image {
+                    id: goldenLogo
+                    width: 80
+                    anchors.top: titleBg.top
+                    anchors.right: parent.right
+                    source: "qrc:/resources/golden_white_full.svg"
+                    anchors.topMargin: 14
+                    anchors.rightMargin: 10
+                    fillMode: Image.PreserveAspectFit
+                }
+
 
         Rectangle{
             color: 'transparent'
@@ -433,7 +444,7 @@ ApplicationWindow {
                 Text{
                     color: 'white'
                     height: 35
-                    text: '   desenvolvido por Gabriel Machado'
+                    text: '   desenvolvido por GoldenSys'
                     verticalAlignment: Text.AlignVCenter
                     font.pointSize: 8
                 }

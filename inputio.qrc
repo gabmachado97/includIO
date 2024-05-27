@@ -11,6 +11,7 @@
 <file alias="mail.svg">./content/images/svg_icons/mail.svg</file>
 <file alias="star.svg">./content/images/svg_icons/star.svg</file>
 <file alias="ContactPage.qml">./content/qml/ContactPage.qml</file>
+<file alias="golden_white_full.svg">./content/images/golden_white_full.svg</file>
 <file alias="DescBtn.qml">./content/qml/controls/DescBtn.qml</file>
 <file alias="TopBarBtn.qml">./content/qml/controls/TopBarBtn.qml</file>
 <file alias="DonatePage.qml">./content/qml/DonatePage.qml</file>
