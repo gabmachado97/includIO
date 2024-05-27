@@ -53,7 +53,7 @@ Baixe o arquivo executável para rodar em qualquer computador clicando [Aqui](ht
 
 ## Download
 
-Baixe o arquivo executável para rodar em qualquer computador clicando [Aqui](https://git-scm.com)
+Baixe o arquivo executável para rodar em qualquer computador clicando [Aqui](https://www.dropbox.com/scl/fi/p7gh2f7miygj0lw0tbuuv/includIO.zip?rlkey=qv7ygy11gdwnvs2f3vl356o08&st=b3xf6y76&dl=0)
 
 ## Contato
 
