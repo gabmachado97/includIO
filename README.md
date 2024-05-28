@@ -41,7 +41,7 @@ Baixe o arquivo executável para rodar em qualquer computador clicando [Aqui](ht
 
 ## Contato
 
-Includ.IO é gratuito para usar e distribuir. Se ele for útil de qualquer forma para você, me escreva um email em <gabriel.heat97@gmail.com> sobre qualquer coisa que queira dizer sobre ele. E também, acesso nosso site clicando Aqui(https://gabmachado97.github.io/goldensys/)
+Includ.IO é gratuito para usar e distribuir. Se ele for útil de qualquer forma para você, me escreva um email em <gabriel.heat97@gmail.com> sobre qualquer coisa que queira dizer sobre ele. E também, acesso nosso site clicando [Aqui](https://gabmachado97.github.io/goldensys/)
 
 ## Créditos
 
