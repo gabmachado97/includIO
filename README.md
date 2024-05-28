@@ -3,7 +3,7 @@
 
   <br>
 	
-  <a href="http://www.amitmerchant.com/electron-markdownify"> ![golden_white](https://github.com/gabmachado97/includIO/assets/61938035/9593bc1c-ea5a-4d4d-a780-996956b59d15) </a>
+  <a href="[http://www.amitmerchant.com/electron-markdownify](https://gabmachado97.github.io/goldensys/#contact)"> ![golden_white](https://github.com/gabmachado97/includIO/assets/61938035/9593bc1c-ea5a-4d4d-a780-996956b59d15) </a>
   <br>
   GoldenSys
 
@@ -12,20 +12,6 @@
 <h2 align="center">Includ.IO</h2>
 
 <h4 align="center">Uma simples ferramenta para agilizar o processo de inserir e remover includes durantes testes em base SAGE</h4>
-
-<p align="center">
-  <a href="https://badge.fury.io/js/electron-markdownify">
-    <img src="https://badge.fury.io/js/electron-markdownify.svg"
-         alt="Gitter">
-  </a>
-  <a href="https://gitter.im/amitmerchant1990/electron-markdownify"><img src="https://badges.gitter.im/amitmerchant1990/electron-markdownify.svg"></a>
-  <a href="https://saythanks.io/to/bullredeyes@gmail.com">
-      <img src="https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg">
-  </a>
-  <a href="https://www.paypal.me/AmitMerchant">
-    <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat">
-  </a>
-</p>
 
 <p align="center">
   <a href="#principais-funções">Principais Funções</a> •
@@ -43,7 +29,7 @@
 
 ## Como Usar
 
-Baixe o arquivo executável para rodar em qualquer computador clicando [Aqui](https://git-scm.com)
+Baixe o arquivo executável para rodar em qualquer computador clicando [Aqui](https://www.dropbox.com/scl/fi/p7gh2f7miygj0lw0tbuuv/includIO.zip?rlkey=qv7ygy11gdwnvs2f3vl356o08&st=b3xf6y76&dl=0)
 
 > **Note**
 > Compatível com qualquer sistema operacional, porém testado apenas em Windows 10 e 11.
@@ -55,7 +41,7 @@ Baixe o arquivo executável para rodar em qualquer computador clicando [Aqui](ht
 
 ## Contato
 
-Includ.IO é gratuito para usar e distribuir. Se ele for útil de qualquer forma para você, me escreva um email em <gabriel.heat97@gmail.com> sobre qualquer coisa que queira dizer sobre ele. E também, acesso nosso site em ...
+Includ.IO é gratuito para usar e distribuir. Se ele for útil de qualquer forma para você, me escreva um email em <gabriel.heat97@gmail.com> sobre qualquer coisa que queira dizer sobre ele. E também, acesso nosso site clicando Aqui(https://gabmachado97.github.io/goldensys/)
 
 ## Créditos
 
